@@ -223,3 +223,12 @@ const essentialData = books.map((book) => {
   };
 });
 essentialData;
+//////////////Filter
+const longBooksWithMovies = books
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
+longBooksWithMovies;
+
+const adventurebook = books
+  .filter((book) => book.genres.includes("adventure"))
+  .map((book) => book.title);
