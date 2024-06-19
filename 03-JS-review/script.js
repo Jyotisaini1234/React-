@@ -242,3 +242,20 @@ shorted;
 arr;
 const storedBypages = books.slice().sort((a, b) => b.pages - a.pages);
 storedBypages;
+
+const newBook = {
+  id: 6,
+  tittle: "Harry potter and the chamber of secrets",
+  pages: 2030,
+  author: "J.S ",
+};
+const booksAfterAdd = [...books, newBook];
+booksAfterAdd;
+//////Delete the book object from array
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+booksAfterDelete;
+///// Update book  object in the array
+const booksAfterUpdate = booksAfterDelete.map((book) =>
+  book.id === 1 ? { ...book, pages: 1201 } : book
+);
+booksAfterUpdate;
