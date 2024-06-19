@@ -236,3 +236,9 @@ adventurebook;
 
 const pagesallBooks = books.reduce((acc, book) => acc + book.pages, 0);
 pagesallBooks;
+const arr = [1, 2, 3, 4, 5];
+const shorted = arr.slice().sort((a, b) => b - a);
+shorted;
+arr;
+const storedBypages = books.slice().sort((a, b) => b.pages - a.pages);
+storedBypages;
