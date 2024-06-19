@@ -209,53 +209,58 @@ function getBook(id) {
 // const count = book.reviews.librarything.reviewsCount ?? "Not Data";
 // count;
 
-const books = getBooks();
-books;
-const x = [1, 2, 3, 4, 5].map((el) => el * 2);
-console.log(x);
-const tittles = books.map((book) => book.title);
-tittles;
+// const books = getBooks();
+// books;
+// const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+// console.log(x);
+// const tittles = books.map((book) => book.title);
+// tittles;
 
-const essentialData = books.map((book) => {
-  return {
-    tittle: book.title,
-    author: book.author,
-  };
-});
-essentialData;
+// const essentialData = books.map((book) => {
+//   return {
+//     tittle: book.title,
+//     author: book.author,
+//   };
+// });
+// essentialData;
 //////////////Filter
-const longBooksWithMovies = books
-  .filter((book) => book.pages > 500)
-  .filter((book) => book.hasMovieAdaptation);
-longBooksWithMovies;
+// const longBooksWithMovies = books
+//   .filter((book) => book.pages > 500)
+//   .filter((book) => book.hasMovieAdaptation);
+// longBooksWithMovies;
 
-const adventurebook = books
-  .filter((book) => book.genres.includes("adventure"))
-  .map((book) => book.title);
-adventurebook;
+// const adventurebook = books
+//   .filter((book) => book.genres.includes("adventure"))
+//   .map((book) => book.title);
+// adventurebook;
 
-const pagesallBooks = books.reduce((acc, book) => acc + book.pages, 0);
-pagesallBooks;
-const arr = [1, 2, 3, 4, 5];
-const shorted = arr.slice().sort((a, b) => b - a);
-shorted;
-arr;
-const storedBypages = books.slice().sort((a, b) => b.pages - a.pages);
-storedBypages;
+// const pagesallBooks = books.reduce((acc, book) => acc + book.pages, 0);
+// pagesallBooks;
+// const arr = [1, 2, 3, 4, 5];
+// const shorted = arr.slice().sort((a, b) => b - a);
+// shorted;
+// arr;
+// const storedBypages = books.slice().sort((a, b) => b.pages - a.pages);
+// storedBypages;
 
-const newBook = {
-  id: 6,
-  tittle: "Harry potter and the chamber of secrets",
-  pages: 2030,
-  author: "J.S ",
-};
-const booksAfterAdd = [...books, newBook];
-booksAfterAdd;
-//////Delete the book object from array
-const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
-booksAfterDelete;
-///// Update book  object in the array
-const booksAfterUpdate = booksAfterDelete.map((book) =>
-  book.id === 1 ? { ...book, pages: 1201 } : book
-);
-booksAfterUpdate;
+// const newBook = {
+//   id: 6,
+//   tittle: "Harry potter and the chamber of secrets",
+//   pages: 2030,
+//   author: "J.S ",
+// };
+// const booksAfterAdd = [...books, newBook];
+// booksAfterAdd;
+// //////Delete the book object from array
+// const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+// booksAfterDelete;
+// ///// Update book  object in the array
+// const booksAfterUpdate = booksAfterDelete.map((book) =>
+//   book.id === 1 ? { ...book, pages: 1201 } : book
+// );
+// booksAfterUpdate;
+
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+console.log("jonas");
