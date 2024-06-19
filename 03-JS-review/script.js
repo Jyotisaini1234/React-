@@ -232,3 +232,7 @@ longBooksWithMovies;
 const adventurebook = books
   .filter((book) => book.genres.includes("adventure"))
   .map((book) => book.title);
+adventurebook;
+
+const pagesallBooks = books.reduce((acc, book) => acc + book.pages, 0);
+pagesallBooks;
