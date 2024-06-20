@@ -11,6 +11,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-// before react v18
-n;
