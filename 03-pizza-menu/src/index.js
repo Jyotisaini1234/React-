@@ -56,7 +56,7 @@ function App() {
   );
 }
 function Header() {
-  return <h1>Fast Pizza in world</h1>;
+  return <h1>Fast Pizza in the world</h1>;
 }
 function Menu() {
   return (
@@ -69,8 +69,15 @@ function Menu() {
   );
 }
 function Footer() {
+  const hour = new Date().getHours();
+  const openhour = 12;
+  const closehour = 22;
+  const isOpen = hour >= openhour && hour <= closehour;
+  console.log(isOpen);
+  // if (hour >= openhour && hour <= closehour) alert("We're Currently Open");
+  // else alert("Sorry We're Close");
   return (
-    <footer>{new Date().toLocaleDateString()}. We're currently open </footer>
+    <footer>{new Date().toLocaleTimeString()}. We're currently open </footer>
   );
 }
 
