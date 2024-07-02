@@ -5,10 +5,11 @@
 .container {
   background-color: #fff;
   color: red;
-  height: 70vh;
-  width: 26vw;
+  height: 500px;
+  width: 300px;
   padding: 1rem;
   border: 5px solid black;
+  margin: auto;
 }
 .avatar {
   background-repeat: no-repeat;
@@ -16,6 +17,8 @@
   display: block;
   align-items: center;
   justify-content: center;
+  width: 200px;
+  height: 200px;
 }
 .data {
   padding-top: -2rem;
