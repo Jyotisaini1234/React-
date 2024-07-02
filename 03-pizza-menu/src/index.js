@@ -44,7 +44,7 @@ const pizzaData = [
     photoName: "pizzas/prosciutto.jpg",
     soldOut: false,
   },
-];
+]
 
 function App() {
   return (
