@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+const messages=[
+  "Learn React",
+  "Apply for job",
+  "Invest your money "
+]
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export default function App(){
+
+  function handlPrevious(){
+    alert("Previous")
+  }
+  function handlNext(){
+    alert("Next")
+  }
+
+  const Step = 1;
+  return <div className="steps">
+    <div className="numbers">
+      <div className={`${Step >= 1 ? "active" :""}`}>1</div>
+      <div className={`${Step >= 2 ? "active" :""}`}>2</div>
+      <div className={`${Step >= 3 ? "active" :""}`}>3</div>
+
     </div>
-  );
+    <p className="message">Step :{Step}: {messages[Step-1]}</p>
+    <div className="buttons">
+      <button style={{backgroundColor:"#7950f2",color:"#fff"}} onClick={handlPrevious}>Previous</button>
+      <button style={{backgroundColor:"#7950f2",color:"#fff"}} onClick={handlNext}>Next</button>
+    </div>
+  </div>
 }
-
-export default App;
