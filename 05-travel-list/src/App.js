@@ -25,15 +25,23 @@ export default function App(){
     </div>
    }
 function Form(){
-  return <div className='add-form'>
+function HandelSubmit(e)
+{
+  e.preventDefault();
+}
+
+  return <div className='add-form' onSubmit={HandelSubmit}>
 <h3>What do you need for your Trip</h3>
+<select>{Array.from({length:20},(_,i)=>i+1).map((num)=>(<option value={num} key={num}>{num}</option>))}</select>
+<input type='text' placeholder='Item...'/>
+<button>Add</button>
   </div>
 
 }
 function PackingList(){
   return <div className='list'>
     <ul >
-{initialItems.map(item=><Item item={item}/>)}
+{initialItems.map(item=><Item item={item} key={item.id}/>)}
   </ul>
   </div>
 }
