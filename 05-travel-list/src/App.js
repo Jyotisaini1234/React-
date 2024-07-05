@@ -5,6 +5,10 @@ import './App.css';
 
 export default function App(){
 const [items,setItems]= useState([]);
+
+
+
+
 function HandelallItems(item){
   setItems((items)=>[...items,item])
   }
@@ -23,7 +27,7 @@ return( <div className='app'>
   <Logo/>
   <Form  onAddItems={HandelallItems}/>
   <PackingList items={items} onDelete={HandelDelete} onToggleItem={HandelToggleItems}/>
-  <State/>
+  <State items={items}/>
   </div>)}
 
    function Logo(){
@@ -74,6 +78,23 @@ function Item({item,onDelete,onToggleItem}){
       <button onClick={()=>onDelete(item.id)}>&times;</button>
     </li>
 }
-function State(){
-  return <footer className='stats'><em>You have X items on your list ,and you already packed X (X%)</em></footer>
+function State({items}){
+if (!items.length) return <p className='stats'>
+  <em>
+    Start adding some items to your packing List 
+  </em>
+</p>
+
+
+const numItems=items.length;
+const numPacked=items.filter((item)=>item.packed).length
+const Percentage= Math.round((numPacked/numItems)*100)
+
+
+  return <footer className='stats'>
+    <em>
+      {Percentage ===100 ? "you got everything ! Ready to go ":
+      `You have ${numItems} items on your list ,and you already 
+      packed ${numPacked} (${Percentage}%)`}</em>
+    </footer>
 }
