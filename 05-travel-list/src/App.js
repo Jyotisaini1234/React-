@@ -37,7 +37,7 @@ const [quantity,setQuantity] = useState(5);
 console.log(newItem)
 setDescription("");
 setQuantity(5);
-
+  
 
 } 
 
