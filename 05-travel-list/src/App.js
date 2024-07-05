@@ -13,10 +13,16 @@ function HandelDelete(id){
 setItems((items)=> items.filter((item)=>item.id !==id))
 }
 
-  return( <div className='app'>
+
+function HandelToggleItems(id){
+  setItems(items=>items.map((item) => item.id === id ? {...item,packed: !item.packed}:item));
+}
+
+  
+return( <div className='app'>
   <Logo/>
   <Form  onAddItems={HandelallItems}/>
-  <PackingList items={items} onDelete={HandelDelete}/>
+  <PackingList items={items} onDelete={HandelDelete} onToggleItem={HandelToggleItems}/>
   <State/>
   </div>)}
 
@@ -52,17 +58,20 @@ setQuantity(1);
   </div>
 
 }
-function PackingList({items, onDelete}){
+function PackingList({items, onDelete,onToggleItem}){
   return (<div className='list'>
     <ul >
-{items.map((item)=><Item item={item} onDelete={onDelete} key={item.id}/>)}
+{items.map((item)=><Item item={item} onDelete={onDelete} onToggleItem={onToggleItem}  key={item.id}/>)}
   </ul>
   </div>
   );
 }
-function Item({item,onDelete}){
-    return <li><span style={item.packed ? {textDecoration:"line-through"} : {}}>{item.quantity}{item.description}</span>
-    <button onClick={()=>onDelete(item.id)}>&times;</button>
+function Item({item,onDelete,onToggleItem}){
+    return <li>
+      <input type='checkbox' value={item.packed} onChange={()=>onToggleItem(item.id)}/>
+      <span style={item.packed ? {textDecoration:"line-through"} : {}}>{item.quantity}{item.description}</span>
+      
+      <button onClick={()=>onDelete(item.id)}>&times;</button>
     </li>
 }
 function State(){
