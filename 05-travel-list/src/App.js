@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 
 const initialItems = [
@@ -25,16 +26,26 @@ export default function App(){
     </div>
    }
 function Form(){
-function HandelSubmit(e)
+const [description,setDescription]= useState("");
+const [quantity,setQuantity] = useState(5);
+  function HandelSubmit(e)
 {
   e.preventDefault();
-}
+
+  if(!description) return;
+  const newItem = {description,quantity,packed:false,id:Date.now()}
+console.log(newItem)
+setDescription("");
+setQuantity(5);
+
+
+} 
 
   return <div className='add-form' onSubmit={HandelSubmit}>
-<h3>What do you need for your Trip</h3>
-<select>{Array.from({length:20},(_,i)=>i+1).map((num)=>(<option value={num} key={num}>{num}</option>))}</select>
-<input type='text' placeholder='Item...'/>
-<button>Add</button>
+         <h3>What do you need for your Trip</h3>
+         <select value={quantity} onChange={(e)=>setQuantity(e.target.value)}>{Array.from({length:20},(_,i)=>i+1).map((num)=>(<option value={num} key={num}>{num}</option>))}</select>
+         <input type='text' placeholder='Item...' value={description} onChange={(e)=>setDescription(e.target.value)}/>
+         <button onClick={HandelSubmit}>Add</button>
   </div>
 
 }
