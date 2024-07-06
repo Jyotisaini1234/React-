@@ -1,0 +1,69 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+font-family: sans-serif;
+color: #343a40;
+line-height: 1;
+
+}
+.accordion{
+  width: 700px;
+  margin: 10rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.item{
+  box-shadow:  1rem 1rem 4rem rgba(226, 225, 225, 0.25);
+  background-color: white; 
+  grid-template-columns: auto 1fr auto ;
+  grid-template-rows: repeat(2,1fr);
+  display: grid;
+column-gap: 24px;
+row-gap: 32px;
+  align-items: center;
+  padding: 20px 24px;
+  padding-right: 48px;
+  border-radius: 5px ;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+
+
+}
+.Number{
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #ced4da;
+
+}
+.Title .icon{
+
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.content-box{
+  grid-column: 2/-1;
+  padding-bottom: 16px;
+  line-height: 1.6rem;
+}
+.content-box ul{
+  color: #868e96;
+  margin-left: 16px;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.open{
+  border-bottom: 4ox solid #087f5b;
+
+}
+.open .Number,
+.open .Title{
+  color: #087f5b;
+}
