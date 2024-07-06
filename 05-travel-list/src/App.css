@@ -78,7 +78,7 @@ input {
 }
 
 .list {
-  background-color: #F1F1F2;
+  background-color: #F1F1F9;
   color:#1995AD ;
   padding: 4rem 0;
 
@@ -96,6 +96,7 @@ input {
   font-size: 1.4rem;
   font-weight: 700;
   margin: 0 0.8rem;
+  background-color: #dff3ed;
 }
 
 .list ul {

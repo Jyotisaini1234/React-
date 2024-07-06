@@ -63,13 +63,33 @@ setQuantity(1);
 
 }
 function PackingList({items, onDelete,onToggleItem}){
+  const [shortby,setShortby]= useState("input");
+  let shortedItems;
+  if (shortby ==="input") shortedItems =items;
+if (shortby === "description") shortedItems =items.slice().sort((a,b)=>a.description.localeCompare(b.description));
+if (shortby === "packed") shortedItems = items.slice().sort((a,b)=>Number(a.packed)-Number(b.packed))
   return (<div className='list'>
     <ul >
-{items.map((item)=><Item item={item} onDelete={onDelete} onToggleItem={onToggleItem}  key={item.id}/>)}
-  </ul>
-  </div>
-  );
-}
+        {shortedItems.map((item)=><Item item={item}
+        onDelete={onDelete} onToggleItem={onToggleItem}
+          key={item.id}/>)}
+      </ul>
+      <div className='actions'>
+        <select value={shortby} onChange={(e)=>setShortby(e.target.value)}>
+    <option value="input">
+      Short by input order
+    </option>
+    <option value="description">
+      Short by description
+    </option>
+    <option value="packed">
+      Short by packed
+    </option>
+        </select>
+      </div>
+      </div>
+      );
+    }
 function Item({item,onDelete,onToggleItem}){
     return <li>
       <input type='checkbox' value={item.packed} onChange={()=>onToggleItem(item.id)}/>
