@@ -1,4 +1,4 @@
-
+/* 
 
 @import url("https://fonts.googleapis.com/css2?family=Monoton&family=Quicksand:wght@500;700&display=swap");
 
@@ -152,6 +152,6 @@ text-align: center;
 }
 .btn-clear{
   background-color: #dff3ed;
-  /* margin-top: -16rem;
-  margin-left: 44rem; */
-}
+  margin-top: -16rem;
+  margin-left: 44rem;
+} 
