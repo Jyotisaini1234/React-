@@ -150,3 +150,8 @@ input[type="checkbox"] {
   display: flex;
 text-align: center;
 }
+.btn-clear{
+  background-color: #dff3ed;
+  /* margin-top: -16rem;
+  margin-left: 44rem; */
+}

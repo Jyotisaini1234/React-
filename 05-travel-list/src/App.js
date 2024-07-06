@@ -21,12 +21,16 @@ setItems((items)=> items.filter((item)=>item.id !==id))
 function HandelToggleItems(id){
   setItems(items=>items.map((item) => item.id === id ? {...item,packed: !item.packed}:item));
 }
-
+function HandelItemClear(){
+  const confirmed= window.confirm("Are you sure you want to delete all items ?")
+   if (confirmed) setItems([]);
+}
   
 return( <div className='app'>
   <Logo/>
   <Form  onAddItems={HandelallItems}/>
-  <PackingList items={items} onDelete={HandelDelete} onToggleItem={HandelToggleItems}/>
+  <PackingList items={items} onDelete={HandelDelete}
+   onToggleItem={HandelToggleItems} onItemClear={HandelItemClear}/>
   <State items={items}/>
   </div>)}
 
@@ -62,7 +66,7 @@ setQuantity(1);
   </div>
 
 }
-function PackingList({items, onDelete,onToggleItem}){
+function PackingList({items, onDelete,onToggleItem,onItemClear}){
   const [shortby,setShortby]= useState("input");
   let shortedItems;
   if (shortby ==="input") shortedItems =items;
@@ -87,6 +91,7 @@ if (shortby === "packed") shortedItems = items.slice().sort((a,b)=>Number(a.pack
     </option>
         </select>
       </div>
+      <button onClick={onItemClear} className='btn-clear'>Clear list</button>
       </div>
       );
     }
