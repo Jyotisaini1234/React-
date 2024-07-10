@@ -1,18 +1,7 @@
-import { StrictMode } from "react";
+import { StrictMode} from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 
-function App() {
-  return (
-    <div className="container">
-      <Avatar />
-      <div className="data">
-        <Intro />
-        <SkillList />
-      </div>
-    </div>
-  );
-}
 function Avatar() {
   const style = {
     height: "30%",
@@ -21,7 +10,11 @@ function Avatar() {
     margin: "auto",
   };
   return (
+    <div className="container">
     <img className="avatar" src="./Aavtar.jpeg" alt="avatar " style={style} />
+    <Intro/>
+    <SkillList/>
+    </div>
   );
 }
 function Intro() {
@@ -64,6 +57,6 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <App />
+    <Avatar />
   </StrictMode>
 );

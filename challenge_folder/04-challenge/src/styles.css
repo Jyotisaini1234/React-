@@ -1,0 +1,41 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.container {
+  background-color: #fff;
+  color: red;
+  height: 500px;
+  width: 300px;
+  padding: 1rem;
+  border: 5px solid black;
+  margin: auto;
+}
+.avatar {
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+}
+.data {
+  padding-top: -2rem;
+  padding: 1rem;
+}
+.intro {
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+}
+.skill-list {
+  flex-wrap: wrap;
+  color: black;
+  font-weight: 800;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  flex-direction: row;
+}
