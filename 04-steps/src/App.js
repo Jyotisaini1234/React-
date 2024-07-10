@@ -35,7 +35,8 @@ return <div>
       <div className={`${step >= 3 ? "active" :""}`}>3</div>
 
     </div>
-    <p className="message">Step :{step}: {messages[step-1]}</p>
+    <p className="message">
+      <h3>Step :</h3> {step}: {messages[step-1]}</p>
     <div className="buttons">
 
 <Button bgColor="#7950f2" 
