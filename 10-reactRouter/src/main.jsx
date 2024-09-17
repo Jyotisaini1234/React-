@@ -1,30 +1,3 @@
-// import { StrictMode } from 'react'
-// import { createRoot } from 'react-dom/client'
-// import { RouterProvider ,createBrowserRouter} from 'react-router-dom'
-// import   Root  from './Root.jsx'
-// // import  Home from './components/Header/Header.jsx'
-// import About from './components/About/About.jsx'
-// const router = createBrowserRouter([{
-//   path:'/',
-//   element:<Root/>,
-//   children:[
-   
-//     {
-//       path:"about",
-//       element:<About/>
-//     },
-    
-//   ]
-// }])
-
-// createRoot(document.getElementById('root')).render(
-//   <StrictMode>
-// <RouterProvider router={router} />
-//   </StrictMode>,
-// )
-
-
-
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 // eslint-disable-next-line no-unused-vars
